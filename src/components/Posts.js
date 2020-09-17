@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link, Switch, Redirect, HashRouter} from 'react-router-dom'
 
 class Post extends Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
         this.state = {
             title: []
         }
@@ -19,7 +20,6 @@ class Post extends Component {
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             this.setState({
                 title:data
             })
@@ -51,7 +51,14 @@ class Post extends Component {
                                 this.state.title.map( t => {
                                     return(
                                         <tr key={t.id}>
-                                            <td>{t.title}</td>
+                                            <td>
+                                                <Router>
+                                                    <Route>
+                                                        <Link to={`/detail/${t.id}`}>{t.title}</Link>
+                                                    </Route>
+                                                </Router>
+                                               
+                                            </td>
                                             <td><button>Edit</button></td>
                                             <td><button>Delete</button></td>
                                         </tr>
