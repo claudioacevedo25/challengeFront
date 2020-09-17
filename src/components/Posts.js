@@ -36,6 +36,7 @@ class Post extends Component {
     render(){
         return (
             <div className="container">
+                <Link to='/newPost' className="btn btn-primary">New Post</Link>
                 <h2 className="text-center">Posts</h2><hr/>
                 <section>
                     <table className="table shadow p-3 mb-5 bg-white rounded">
