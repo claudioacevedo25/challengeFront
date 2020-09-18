@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch, Redirect, HashRouter} from 'react-router-dom'
-
+import BtnDelete from './BtnDelete'
 class Post extends Component {
     constructor(props) {
         super(props);
@@ -36,8 +36,9 @@ class Post extends Component {
     render(){
         return (
             <div className="container">
+                <Link to='/' className="btn btn-info">Home</Link>
                 <Link to='/newPost' className="btn btn-primary">New Post</Link>
-                <h2 className="text-center">Posts</h2><hr/>
+                <h2 className="text-center">POSTS</h2><hr/>
                 <section>
                     <table className="table shadow p-3 mb-5 bg-white rounded">
                         <thead className="thead-dark">
@@ -61,7 +62,7 @@ class Post extends Component {
                                                
                                             </td>
                                             <td><button>Edit</button></td>
-                                            <td><button>Delete</button></td>
+                                            <td><BtnDelete id={t.id}/></td>
                                         </tr>
                                     )
                                 })
