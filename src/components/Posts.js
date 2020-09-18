@@ -61,7 +61,13 @@ class Post extends Component {
                                                 </Router>
                                                
                                             </td>
-                                            <td><button>Edit</button></td>
+                                            <td>
+                                                <Router>
+                                                    <Route>
+                                                        <Link className="btn btn-success" to={`/edit/${t.id}`}>Edit</Link>
+                                                    </Route>
+                                                </Router>
+                                            </td>
                                             <td><BtnDelete id={t.id}/></td>
                                         </tr>
                                     )

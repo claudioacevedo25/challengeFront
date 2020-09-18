@@ -21,12 +21,17 @@ const Detail = () => {
        return <h1 className="text-center text-danger">El post es inexistente!!!</h1>
    }
    return(
-      <div>  
-            <h1 className="text-center">{post.title}</h1>
-            <h3 className="text-center">{post.body}</h3>
-            <h4>ID: {post.id}</h4>
-            <h4>USERID: {post.userId}</h4> 
-      </div>
+
+    <div class="card">
+        <div class="card-header">
+             USERID: {post.userId} - ID: {post.id}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{post.title}</h5>
+            <p class="card-text">{post.body}</p>
+            <a href="/" class="btn btn-primary">Back</a>
+        </div>
+    </div>
    )
 }
 
